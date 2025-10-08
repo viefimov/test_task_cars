@@ -1,6 +1,5 @@
 <script setup lang="ts">
-import { useAuthStore } from './stores/auth';
-const auth = useAuthStore()
+
 </script>
 
 <template>
@@ -10,15 +9,6 @@ const auth = useAuthStore()
         <a-menu-item key="home"
           ><RouterLink to="/">Главная</RouterLink></a-menu-item
         >
-        <a-menu-item v-if="!auth.isAuthenticated" key="login"
-          ><RouterLink to="/login">Вход</RouterLink></a-menu-item
-        >
-        <a-menu-item v-if="!auth.isAuthenticated" key="register"
-          ><RouterLink to="/register">Регистрация</RouterLink></a-menu-item
-        >
-      <a-menu-item v-if="auth.isAuthenticated">
-        <a @click="auth.logout()">Выйти из аккаунта</a>
-      </a-menu-item>
       </a-menu>
     </a-layout-header>
 
